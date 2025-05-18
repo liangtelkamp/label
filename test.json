@@ -28,7 +28,7 @@
         "non_pii_explanation": "NON_SENSITIVE\n\nThe 'facility_id' column contains numerical identifiers for facilities, which are not inherently sensitive. These identifiers do not reveal any specific geopolitical, personal, or sensitive operational information on their own. They are used for internal tracking and do not pose a risk if shared.",
         "non_pii_sensitivity_level": "NON_SENSITIVE",
         "non_pii_sensitivity_level_explanation": "NON_SENSITIVE",
-        "non_pii_explanation_agree": 1
+        "pii_explanation_reject": 1
       },
       "facility_name": {
         "records": [
