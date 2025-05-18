@@ -121,7 +121,7 @@ with left_col:
     updated |= vote_section("Non-PII Sensitivity Level", "non_pii_sensitivity_level_explanation")
 
     if updated:
-        if st.button("💾 Save and continue"):
+        if st.button("💾 Save and continue"): 
             if GITHUB_TOKEN:
                 success = update_github_file(test_data)
                 if success:
