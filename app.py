@@ -106,13 +106,11 @@ with left_col:
                         col_data[agree_key] = col_data.get(agree_key, 0) + 1
                         updated_keys.append(agree_key)
                         st.success(f"You agreed with GPT-4o on {label}")
-                        return True
                 with col2:
                     if st.button(f"❌ Reject {label}", key=f"btn_reject_{key}"):
                         col_data[reject_key] = col_data.get(reject_key, 0) + 1
                         updated_keys.append(reject_key)
                         st.warning(f"You rejected GPT-4o on {label}")
-                        return True
             else:
                 st.info(f"Feedback already collected for {label} ✅")
         return False
@@ -123,7 +121,7 @@ with left_col:
     updated |= vote_section("Non-PII Sensitivity Level", "non_pii_sensitivity_level_explanation")
 
     if updated:
-        if st.button("💾 Save and continue"): 
+        if st.button("💾 Save and continue"):
             if GITHUB_TOKEN:
                 success = update_github_file(test_data)
                 if success:
