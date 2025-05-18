@@ -132,6 +132,7 @@ with left_col:
             columns[current_col][f"non_pii_{variant}"] = non_pii
             columns[current_col][f"non_pii_sensitivity_level_{variant}"] = non_pii_level
             updated = True
+            # TODO: Add a check to see if the annotation is correct
             st.success(f"Saved annotation variant {variant} for column '{current_col}'")
 
     else:
