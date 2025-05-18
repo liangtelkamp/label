@@ -18,7 +18,7 @@ GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN")
 REPO_OWNER = st.secrets.get("REPO_OWNER")
 REPO_NAME = st.secrets.get("REPO_NAME")
 TARGET_FILE_PATH = st.secrets.get("TARGET_FILE_PATH", "test_gt.json")
-GITHUB_API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{TARGET_FILE_PATH}"
+GITHUB_API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{TARGET_FILE_PATH}" 
 
 def get_github_file_sha():
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
