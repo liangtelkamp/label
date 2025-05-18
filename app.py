@@ -36,19 +36,30 @@ def update_github_file(content: dict):
 
     sha = get_github_file_sha()
     if not sha:
+        st.error("❌ No SHA found. Aborting GitHub update.")
         return False
 
     headers = {
         "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github+json"
     }
-    data = {
+
+    payload = {
         "message": "Update annotation feedback via Streamlit interface",
         "content": base64.b64encode(json.dumps(content, indent=2).encode()).decode(),
-        "sha": sha
+        "sha": sha,
+        "branch": "main"  # zorg dat dit overeenkomt met je default branch
     }
-    r = requests.put(GITHUB_API_URL, headers=headers, json=data)
-    return r.status_code in [200, 201]
+
+    r = requests.put(GITHUB_API_URL, headers=headers, json=payload)
+
+    if r.status_code in [200, 201]:
+        st.success("✅ File successfully committed to GitHub.")
+        return True
+    else:
+        st.error(f"❌ GitHub update failed: {r.status_code} {r.reason}")
+        st.code(r.text)
+        return False
 
 st.set_page_config(layout="wide")
 st.title("✅ Agree or Reject GPT-4o Annotations")
