@@ -18,7 +18,7 @@ GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN")
 REPO_OWNER = st.secrets.get("REPO_OWNER")
 REPO_NAME = st.secrets.get("REPO_NAME")
 TARGET_FILE_PATH = st.secrets.get("TARGET_FILE_PATH", "test_gt.json")
-GITHUB_API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{TARGET_FILE_PATH}" 
+GITHUB_API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{TARGET_FILE_PATH}"
 
 def get_github_file_sha():
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
@@ -56,13 +56,20 @@ st.title("✅ Agree or Reject GPT-4o Annotations")
 def get_unconfirmed_column():
     for fname, entry in test_data.items():
         for colname, coldata in entry["columns"].items():
-            if coldata.get("agreed", 0) + coldata.get("rejected", 0) < 2:
+            explanations = [
+                "pii_explanation",
+                "pii_sensitivity_level_explanation",
+                "non_pii_explanation",
+                "non_pii_sensitivity_level_explanation"
+            ]
+            votes = sum(coldata.get(f"{k}_agree", 0) + coldata.get(f"{k}_reject", 0) >= 2 for k in explanations)
+            if votes < len(explanations):
                 return fname, colname
     return None, None
 
 selected_file, current_col = get_unconfirmed_column()
 if not selected_file:
-    st.success("🎉 All columns have been confirmed or rejected at least twice.")
+    st.success("🎉 All explanations have been confirmed or rejected at least twice.")
     st.stop()
 
 file_entry = test_data[selected_file]
@@ -81,29 +88,36 @@ with left_col:
     st.markdown("---")
     st.subheader(f"🧠 Explanation for Column: `{current_col}`")
 
-    def print_block(label, text):
-        if text:
-            st.markdown(f"**{label}**")
-            st.markdown(f"> {text}")
-
-    print_block("PII Reasoning", col_data.get("pii_explanation", ""))
-    print_block("PII Sensitivity Level", col_data.get("pii_sensitivity_level_explanation", ""))
-    print_block("Non-PII Reasoning", col_data.get("non_pii_explanation", ""))
-    print_block("Non-PII Sensitivity Level", col_data.get("non_pii_sensitivity_level_explanation", ""))
-
-    st.markdown("---")
     updated = False
-    agree = st.button("✅ Agree with GPT-4o annotation")
-    reject = st.button("❌ Reject GPT-4o annotation")
 
-    if agree:
-        col_data["agreed"] = col_data.get("agreed", 0) + 1
-        updated = True
-        st.success(f"You agreed with GPT-4o for column '{current_col}'")
-    elif reject:
-        col_data["rejected"] = col_data.get("rejected", 0) + 1
-        updated = True
-        st.warning(f"You rejected GPT-4o for column '{current_col}'")
+    def vote_section(label, key):
+        explanation = col_data.get(key, "")
+        if explanation:
+            st.markdown(f"**{label}**")
+            st.markdown(f"> {explanation}")
+            agree_key = f"{key}_agree"
+            reject_key = f"{key}_reject"
+
+            if col_data.get(agree_key, 0) + col_data.get(reject_key, 0) < 2:
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.button(f"✅ Agree with {label}", key=agree_key):
+                        col_data[agree_key] = col_data.get(agree_key, 0) + 1
+                        st.success(f"You agreed with GPT-4o on {label}")
+                        return True
+                with col2:
+                    if st.button(f"❌ Reject {label}", key=reject_key):
+                        col_data[reject_key] = col_data.get(reject_key, 0) + 1
+                        st.warning(f"You rejected GPT-4o on {label}")
+                        return True
+            else:
+                st.info(f"Feedback already collected for {label} ✅")
+        return False
+
+    if vote_section("PII Reasoning", "pii_explanation"): updated = True
+    if vote_section("PII Sensitivity Level", "pii_sensitivity_level_explanation"): updated = True
+    if vote_section("Non-PII Reasoning", "non_pii_explanation"): updated = True
+    if vote_section("Non-PII Sensitivity Level", "non_pii_sensitivity_level_explanation"): updated = True
 
     if updated:
         if GITHUB_TOKEN:
