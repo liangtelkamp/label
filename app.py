@@ -70,32 +70,34 @@ with left_col:
     st.subheader("📝 Step-by-Step Column Annotation")
     updated = False
 
-    scrollable_container = st.container()
-    with scrollable_container:
+    with st.container():
+        st.markdown("<div style='max-height: 800px; overflow-y: auto;'>", unsafe_allow_html=True)
         for col in columns:
-            with st.expander(f"🔍 Annotate column: `{col}`", expanded=False):
-                non_pii_expl = columns[col].get("non_pii_gpt-4o", "")
-                non_pii_level_expl = columns[col].get("non_pii_gpt-4o_sensitivity_level_gpt-4o", "")
+            st.markdown(f"#### 🔍 Annotate column: `{col}`")
 
-                if non_pii_expl:
-                    st.markdown("**Explanation by GPT-4o (Non-PII):**")
-                    st.markdown(f"> {non_pii_expl}")
-                if non_pii_level_expl:
-                    st.markdown("**Sensitivity Level Justification by GPT-4o:**")
-                    st.markdown(f"> {non_pii_level_expl}")
+            non_pii_expl = columns[col].get("non_pii_gpt-4o", "")
+            non_pii_level_expl = columns[col].get("non_pii_gpt-4o_sensitivity_level_gpt-4o", "")
 
-                pii = st.selectbox(f"PII label for '{col}'", ["None", "GENERIC_ID", "PERSON_NAME", "ORGANIZATION_NAME", "PHONE_NUMBER", "EMAIL"], index=0, key=f"pii_{col}")
-                pii_level = st.selectbox(f"PII sensitivity level for '{col}'", ["NON_SENSITIVE", "LOW_SENSITIVE", "MEDIUM_SENSITIVE", "HIGH_SENSITIVE"], index=0, key=f"pii_level_{col}")
-                non_pii = st.selectbox(f"Non-PII label for '{col}'", ["NON_SENSITIVE", "SENSITIVE"], index=0, key=f"non_pii_{col}")
-                non_pii_level = st.selectbox(f"Non-PII sensitivity level for '{col}'", ["NON_SENSITIVE", "MEDIUM_SENSITIVE", "HIGH_SENSITIVE"], index=0, key=f"non_pii_level_{col}")
+            if non_pii_expl:
+                st.markdown("**Explanation by GPT-4o (Non-PII):**")
+                st.markdown(f"> {non_pii_expl}")
+            if non_pii_level_expl:
+                st.markdown("**Sensitivity Level Justification by GPT-4o:**")
+                st.markdown(f"> {non_pii_level_expl}")
 
-                if st.button(f"✅ Save annotation for '{col}'"):
-                    columns[col]["pii_gt"] = pii
-                    columns[col]["pii_sensitivity_level"] = pii_level
-                    columns[col]["non_pii"] = non_pii
-                    columns[col]["non_pii_sensitivity_level"] = non_pii_level
-                    updated = True
-                    st.success(f"Saved annotations for column '{col}'")
+            pii = st.selectbox(f"PII label for '{col}'", ["None", "GENERIC_ID", "PERSON_NAME", "ORGANIZATION_NAME", "PHONE_NUMBER", "EMAIL"], index=0, key=f"pii_{col}")
+            pii_level = st.selectbox(f"PII sensitivity level for '{col}'", ["NON_SENSITIVE", "LOW_SENSITIVE", "MEDIUM_SENSITIVE", "HIGH_SENSITIVE"], index=0, key=f"pii_level_{col}")
+            non_pii = st.selectbox(f"Non-PII label for '{col}'", ["NON_SENSITIVE", "SENSITIVE"], index=0, key=f"non_pii_{col}")
+            non_pii_level = st.selectbox(f"Non-PII sensitivity level for '{col}'", ["NON_SENSITIVE", "MEDIUM_SENSITIVE", "HIGH_SENSITIVE"], index=0, key=f"non_pii_level_{col}")
+
+            if st.button(f"✅ Save annotation for '{col}'"):
+                columns[col]["pii_gt"] = pii
+                columns[col]["pii_sensitivity_level"] = pii_level
+                columns[col]["non_pii"] = non_pii
+                columns[col]["non_pii_sensitivity_level"] = non_pii_level
+                updated = True
+                st.success(f"Saved annotations for column '{col}'")
+        st.markdown("</div>", unsafe_allow_html=True)
 
     if updated:
         if GITHUB_TOKEN:
