@@ -58,7 +58,7 @@ for col in columns:
 
     # Update dictionary
     if st.button(f"✅ Save annotation for '{col}'"):
-        columns[col]["pii_gt"] = pii
+        columns[col]["pii"] = pii
         columns[col]["pii_sensitivity_level"] = pii_level
         columns[col]["non_pii"] = non_pii
         columns[col]["non_pii_sensitivity_level"] = non_pii_level
