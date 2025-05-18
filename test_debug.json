@@ -1,0 +1,198 @@
+{
+    "synthetic_niger_education_facilities_1.csv": {
+        "metadata": {
+            "filename": "synthetic_niger_education_facilities_1.csv",
+            "country": "niger",
+            "domain": "education"
+        },
+        "columns": {
+            "facility_id": {
+                "records": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "non_pii_gpt-4o-mini": "NON_SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            },
+            "facility_name": {
+                "records": [
+                    "\u00c9cole Primaire de Niamey",
+                    "Lyc\u00e9e G\u00e9n\u00e9ral Seyni Kountch\u00e9",
+                    "Centre de Formation Professionnelle de Zinder",
+                    "\u00c9cole Secondaire de Tessaoua",
+                    "Institution Technique de Dosso",
+                    "\u00c9cole Primaire de Tahoua",
+                    "Lyc\u00e9e Technique de Diffa",
+                    "\u00c9cole Secondaire de Dosso",
+                    "Centre de Formation de Niamey",
+                    "\u00c9cole Primaire de Tillab\u00e9ri"
+                ],
+                "non_pii_gpt-4o-mini": "NON_SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            },
+            "region": {
+                "records": [
+                    "Niamey",
+                    "Tillab\u00e9ri",
+                    "Zinder",
+                    "Maradi",
+                    "Dosso",
+                    "Tahoua",
+                    "Diffa",
+                    "Dosso",
+                    "Niamey",
+                    "Tillab\u00e9ri"
+                ],
+                "non_pii_gpt-4o-mini": "SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            },
+            "service_provided": {
+                "records": [
+                    "Primary Education",
+                    "Secondary Education",
+                    "Vocational Training",
+                    "Secondary Education",
+                    "Technical Education",
+                    "Primary Education",
+                    "Technical Education",
+                    "Secondary Education",
+                    "Vocational Training",
+                    "Primary Education"
+                ],
+                "non_pii_gpt-4o-mini": "NON_SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            },
+            "enrollment_capacity": {
+                "records": [
+                    "500",
+                    "800",
+                    "300",
+                    "600",
+                    "450",
+                    "550",
+                    "700",
+                    "650",
+                    "350",
+                    "400"
+                ],
+                "non_pii_gpt-4o-mini": "NON_SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            },
+            "access_constraints": {
+                "records": [
+                    "Limited access due to flooding",
+                    "Restricted due to road conditions",
+                    "Accessible",
+                    "Accessible",
+                    "Seasonal access issues",
+                    "Restricted during rainy season",
+                    "High security risk area",
+                    "Accessible",
+                    "Access limited by permits",
+                    "Restricted due to construction"
+                ],
+                "non_pii_gpt-4o-mini": "NON_SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            },
+            "security_situation": {
+                "records": [
+                    "Stable",
+                    "Moderate",
+                    "High risk due to nearby conflict",
+                    "Stable",
+                    "Stable",
+                    "Stable",
+                    "High risk due to armed groups",
+                    "Stable",
+                    "Stable",
+                    "Moderate"
+                ],
+                "non_pii_gpt-4o-mini": "SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "MEDIUM_SENSITIVE"
+            },
+            "vulnerability_index": {
+                "records": [
+                    "Low",
+                    "Medium",
+                    "High",
+                    "Medium",
+                    "Low",
+                    "Low",
+                    "High",
+                    "Medium",
+                    "Medium",
+                    "Medium"
+                ],
+                "non_pii_gpt-4o-mini": "SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "MEDIUM_SENSITIVE"
+            },
+            "contact_name": {
+                "records": [
+                    "Moussa Issa",
+                    "Fatoumata Harouna",
+                    "Ibrahim Oumarou",
+                    "Aisha Mahamadou",
+                    "Abdoulaye Souley",
+                    "Salou Djibo",
+                    "Mariam Daouda",
+                    "Hamza Lawal",
+                    "Hadjara Amadou",
+                    "Aliyu Boubacar"
+                ],
+                "non_pii_gpt-4o-mini": "NON_SENSITIVE",
+                "pii_gpt-4o-mini": "PERSON_NAME",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            },
+            "contact_number": {
+                "records": [
+                    "22791234567",
+                    "22792345678",
+                    "22793456789",
+                    "22794567890",
+                    "22795678901",
+                    "22796789012",
+                    "22797890123",
+                    "22798901234",
+                    "22799012345",
+                    "22790123456"
+                ],
+                "non_pii_gpt-4o-mini": "NON_SENSITIVE",
+                "pii_gpt-4o-mini": "PHONE_NUMBER",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            },
+            "last_assessment_date": {
+                "records": [
+                    "2023-06-15",
+                    "2023-07-20",
+                    "2023-07-05",
+                    "2023-08-10",
+                    "2023-09-25",
+                    "2023-06-30",
+                    "2023-07-18",
+                    "2023-08-24",
+                    "2023-09-10",
+                    "2023-08-05"
+                ],
+                "non_pii_gpt-4o-mini": "NON_SENSITIVE",
+                "pii_gpt-4o-mini": "None",
+                "non_pii_gpt-4o-mini_sensitivity_level_gpt-4o-mini": "NON_SENSITIVE"
+            }
+        }
+    }
+}

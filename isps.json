@@ -1,0 +1,257 @@
+{
+    "OCHA Afghanistan": {
+        "location": "afghanistan",
+        "low/no sensitivity": [
+            "- HNO and underlying national-level needs assessment data\n- National and provincial dashboard and underlying aggregated data from complaints and feedback mechanisms (excluding data related to SEA)\n- CODs\n- 3W/4W data (at national and provincial level)\n- 3W/4W data at district level (with the exception of clusters/AoRs that have determined this data to be a higher sensitivity through a documented Data Impact Assessment)"
+        ],
+        "medium sensitivity": [
+            "- Survey or needs assessment data aggregated to the district level\n- District-level dashboard and underlying aggregated data from complaints and feedback mechanisms (excluding data related to SEA)"
+        ],
+        "high sensitivity": [
+            "- Survey or needs assessment data aggregated to the community level\n- Community-level data from complaints and feedback mechanisms (excluding data related to SEA)\n- Aid-Worker Contact Details / Lists"
+        ],
+        "severe sensitivity": [
+            "- Raw survey and raw needs assessment data (, e.g. individual/HH level)\n- Raw data from complaints and feedback mechanisms\n- Any data related to SEA\n- Protection and GBV-specific assessment data\n- Personal data of beneficiaries (i.e. Beneficiary lists)\n- Any data on local level authorisations and access related organisational and provincial data"
+        ]
+    },
+    "OCHA Burundi": {
+        "location": "burundi",
+        "low/no sensitivity": [
+            "- Humanitarian Needs and Response Plan\n- Administrative boundaries (COD AB) and demographic statistics (COD-PS)\n- Datasets and shapefiles (including PCOD for administrative boundaries)\n- Humanitarian response dashboard; Humanitarian overview; - Emergency Tracking Tool (ETT)\n- Movement alert from the Displacement Tracking Matrix (DTM)\n- Situation Reports (SitReps)\n- Flash updates on a specific crisis\n- Dashboards\n- Presence maps (name of partners and location) by sectoral group (Cluster)\n- Nutrition survey/assessment reports\n- IPC reports on acute food insecurity and acute malnutrition"
+          ],
+          "medium sensitivity": [
+            "- Aggregated survey results on sensitive topics (e.g., protection monitoring reports at commune and district level)\n- Aggregated data on activities and indicators at provincial/district and commune level, from 5W data for cluster lead agencies x, y, and z\n- Aggregated data on activities and indicators at province/district level, from 5W data with encrypted names of organizations and implementing partners\n- Stock monitoring reports with encrypted names and/or without partner names and exact locations"
+          ],
+          "high sensitivity": [
+            "- Contact details of humanitarian workers / Lists\n- Rapid needs assessment report (aggregated results from Focus Group Discussions (FGDs) and Key Informant Interviews (KIIs), which include general facts such as total number of households and individuals, main vulnerabilities and needs, no disaggregated data)\n- Intention survey (results like number of households, no disaggregated data)\n- Verification survey (aggregated results like number of households, no disaggregated data)\n- Any report aiming to share information on vulnerabilities at district level (not linked to a specific individual)"
+          ],
+          "severe sensitivity": [
+            "- Any raw survey or assessment data, e.g., intention surveys, protection needs assessments, responses from focus group discussions and key informant interviews, etc.\n- Personal data of individuals served (e.g., biometric data and/or registration lists, verification survey dataset, data on incidents of gender-based violence / list of recorded GBV cases)\n- Referral reports/forms"
+          ]
+    },
+    "OCHA Cameroon (NWSW)": {
+        "location": "cameroon",
+        "low/no sensitivity": [
+            "Consolidated, aggregated and cleared anonymized information, at an administrative level agreed by the group [admin 2, unless otherwise specified], including:\n- Operational presence infographics monthly infographics\n- Factsheets\n- Situation report\n- Humanitarian snapshot\n- Bulletin and Other clusters public documents"
+        ],
+        "medium sensitivity": [
+            "- 5W matrix in Excel or infographics at deeper than admin3 level\n- Aggregated assessments reports\n- Figures (population, response)\n- Meeting minutes\n- Humanitarian contact list\n- Assessment reports not anonymized\n- Email communication not anonymized\n- Other IM products or document classified by its author"
+        ],
+        "high sensitivity": [
+            "- Disaggregated assessments reports\n- Sensitive infographics\n- Field activity planning\n- Any other document classified by its author"
+        ],
+        "severe sensitivity": [
+            "- Aid-Worker personal Contact Details\n- Individual survey responses\n- Personal data (i.e. beneficiary lists), etc.\n- Access information\n- Any other document classified by its author\n- Health facility and operational partners names (only where explicit and written permission has been given by the relevant hub)"
+        ]
+    },
+    "OCHA Cameroon (Extreme Nord)": {
+        "location": "cameroon",
+        "low/no sensitivity": [
+            "Compiled, aggregated, and anonymized information at the agreed level of aggregation for sharing. This includes the following types:\nHumanitarian situation overview (Snapshot)\nFactsheets\nMeeting schedules\nCommon Operational DataSet (COD)\nOperational presence (5W)\nFunding tracking dashboards\nNewsletters\nHumanitarian bulletins\nProtection policies (PSEA)\nCall for tenders\nOther sector documents"
+          ],
+          "medium sensitivity": [
+            "Humanitarian access maps\n5W matrix in Excel or infographic at a deeper level than admin level 3\nAggregated assessment reports\nFigures (population, response)\nMeeting minutes\nList of humanitarian contacts\nNon-anonymized assessment reports\nNon-anonymized email communications\nOther IM products\nCash transfer programming (CASH)\nAny other document classified as such by its author"
+          ],
+          "high sensitivity": [
+            "Security information data\nBiometric data\nPersonnel information\nIndividual data related to GBV and protection\nDisaggregated assessment reports\nSensitive infographics\nField activity planning\nAny other document classified as such by its author"
+          ],
+          "severe sensitivity": [
+            "Personal contact details of humanitarian worker\nIndividual survey responses\nPersonal data (e.g., lists of beneficiaries), etc.\nAny other document classified as such by its author"
+          ]
+    },
+    "OCHA Democratic Republic of the Congo": {
+        "location": "congo",
+        "low/no sensitivity": [
+            "Compiled, aggregated, and anonymized information at the agreed level of aggregation for sharing. This includes the following types:\n- Common Operational Dataset (COD)\n- Population projections\n- Operational presence (5W)\n- Humanitarian situation overview (Snapshot)\n- Humanitarian bulletins\n- Humanitarian Response Plan (HRP)\n- Humanitarian Needs Overview (HNO)/Needs Assessments\n- IPC AFI and IPC Acute Malnutrition results (SMART survey)\n- Meeting minutes from regular Cluster meetings"
+          ],
+          "medium sensitivity": [
+            "- Humanitarian access maps\n- 5W matrix in Excel or infographic at a deeper level than admin level 3\n- Aggregated assessment reports\n- Figures (population, response)\n- Cash transfer programming (CASH)\n- List of humanitarian contacts (limited circulation within the humanitarian community)"
+          ],
+          "high sensitivity": [
+            "- Security information data\n- Sensitive infographics\n- Field activity planning"
+          ],
+          "severe sensitivity": [
+            "- Personal contact details of humanitarian workers\n- Individual survey responses\n- Personal data (i.e., beneficiary lists), etc.\n- Contact details of the authors of alerts or protection notes\n- Confidential notes and reports on human rights violations or on the protection of civilians"
+          ]
+    },
+    "OCHA Iraq": {
+        "location": "iraq",
+        "low/no sensitivity": [
+            "- CODs   \n- Access restrictions at the district level"
+        ],
+        "medium sensitivity": [
+            "- Survey results aggregated to the district level"
+        ],
+        "high sensitivity": [
+            "- Survey results aggregated to the household level and with additional disaggregation based on different indicators\n- Aid-Worker Contact Details / Lists"
+        ],
+        "severe sensitivity": [
+            "- Raw survey data, e.g. individual survey responses at HH-level data\n- Personal data of beneficiaries (i.e. beneficiary lists) [footnote: Personally identifiable data like beneficiary lists should be shared within bilateral agreements based on organizational policies framed in accordance with the minimum standards prescribed by the UN General Assembly, Guidelines for the Regulation of Computerized Personal Data Files, as adopted by Resolution A/Res/45/95 of 14 December 1990, available at: http://www.refworld.org/docid/3ddcafaac.html and other international instruments concerning the protection of personal data and individuals\u2019 privacy.]"
+        ]
+    },
+    "OCHA Mozambique": {
+        "location": "mozambique",
+        "low/no sensitivity": [
+            "-(HNO); Humanitarian Response Plan (HRP)\n-Administrative boundary (COD-AB) and population statistics\n(COD-PS) data sets and shapefiles (including PCODs for administrative boundaries)\n- Humanitarian Response Dashboard; Humanitarian Snapshot;\n- Emergency Tracking Tool (ETT)- Movement Alert, from Displacement Tracking Matrix (DTM)\n- Access Snapshot\n- SitReps\n- Flash Updates on specific crisis (e.g.: Flash Update on Palma)\n- Linha Verde Reports/Dashboards\n- Presence Map (partners name, location) by Cluster\n- nutrition survey/assessment reports\n- IPC acute food insecurity and acute malnutrition reports"
+        ],
+        "medium sensitivity": [
+            "- Aggregated survey results on sensitive topics (e.g.: protection monitoring reports on \nrefoulement for instance, at the district level) \n- Aggregated data on activities, indicators at province/ district level, from 5W data for x, y, and z clusters lead members. - Aggregated data on activities, indicators at province/ district level, from 5W data with \nencrypted names of \norganizations and \nimplementing partners \n-Stocks monitoring reports with encrypted and/or no partner\u2019s names and exact location (province level \u2013 TBD)"
+        ],
+        "high sensitivity": [
+            "- Aid-worker Contact Details / Lists \n-Inter- agency rapid needs assessment report (aggregated results from focus group \ndiscussions (FGDs) and key informant interviews (KIIs), which includes general facts, such as total # of HHs and individuals, main vulnerabilities ad needs, no disaggregated data) \n- Intention survey (aggregated results like # of HHs, no \ndisaggregated data); \n- Verification survey \n(aggregated results like # of HHs, no disaggregated data) -Presence Map (partners name, location, and number of staff members) by OCHA \n- GPS coordinates for sites - Any report intended to share information on vulnerabilities at the district level (not identified to a particular individual)"
+        ],
+        "severe sensitivity": [
+            "- Any raw survey/ assessment data, e.g.: intention survey, protection needs assessment, responses from FGDs and KIIs, etc. \n- 5W data- set (without \nencrypted data) \n- Personal data of people served (e.g.: biometric data and/ or registration lists, \nverification survey data- set, GBV incidents data/ registered GBV cases list)12 \n- Access/ security data that is not aggregated \n-Referral\u2019s report/ forms"
+        ]
+    },
+    "OCHA Myanmar": {
+        "location": "myanmar",
+        "low/no sensitivity": [
+            "HNO and underlying national- level aggregate survey results\nCODs and FODs\nAccess restrictions (township level)\n3/4/5W data (at national and township level)\nSome organization names"
+        ],
+        "medium sensitivity": [
+            "Aggregated survey results (e.g. aggregated to the township level)\n3/4/5W data (this data at the village-tract level and below is restricted)\nNames of some organizations who do not want to be publicly- known"
+        ],
+        "high sensitivity": [
+            "Aggregated survey results (e.g. aggregated to the household level and with additional disaggregation based on different indicators)\nAid-Worker Contact Details / Lists"
+        ],
+        "severe sensitivity": [
+            "Raw survey data, e.g. individual survey responses at HH-level data\nPersonal data of beneficiaries\n(i.e. Beneficiary lists) [footnote: Personally identifiable data like beneficiary lists should be shared within bilateral agreements based on organizational policies framed in accordance with the minimum standards prescribed by the UN General Assembly, Guidelines for the Regulation of Computerized Personal Data Files, as adopted by Resolution A/Res/45/95 of 14 December 1990, available at: http://www.refworld.org/docid/3ddcafaac.html and other international instruments concerning the protection of personal data   and individuals\u2019 privacy.]"
+        ]
+    },
+    "OCHA Niger": {
+        "location": "niger",
+        "low/no sensitivity": [
+            "Administrative boundaries\nPopulation projections disaggregated by sex and age\nMHR (Harmonized Results Matrix)\n3W (Who does What Where)\nHNO/HRP data (People in Need, targets, projects, budget)\nFigures on displaced populations\nEpidemic data\nFlood data\nHarmonized Framework results\nScaling up (Malnutrition and age data)"
+          ],
+          "medium sensitivity": [
+            "MSA assessment results\nLocation of displaced persons (IDP sites, refugees, etc.)\nPre-positioning of stocks\nLists of humanitarian contacts\nSecurity incidents\nFunctional and non-functional schools and health centers\nReports and maps on access constraints"
+          ],
+          "high sensitivity": [
+            "Road axes with and without escorts"
+          ],
+          "severe sensitivity": [
+            "Individual survey responses\nPersonal data (e.g., beneficiary lists), etc.\nMaps of road axes with and without escorts\nMaps showing the positioning of military bases"
+          ]
+    },
+    "OCHA Occupied Palestinian Territory": {
+        "location": "palestinian",
+        "low/no sensitivity": [
+            "Flash updates including Snapshot data \nSituation reports \nFlash appeal \nData included in the Humanitarian Needs Overview \nPublic strategy and planning documents such as the Humanitarian Response Plan \nData on education facilities including on damages and functionality level, at the settlement (ADM3) level or with exact locations (e.g. coordinates) as deemed appropriate by the Education Cluster\nData on Health Service Points with locations (e.g. coordinates)\nData on attacks on Health Facilities at governorate (ADM2) level\nDisease Surveillance data at governorate (ADM2) level\nResponse tracking data at the settlement (ADM3) level, excluding partner names if requested by Clusters or partners   \nSurvey and needs assessment data at the governorate (ADM2) level  \nAid-worker contact details and contact lists if consent for sharing has been obtained \nSecurity incidents aggregated to the governorate (ADM2) level (NB: the source should be validated) \nCommon Operational Datasets (NB: border crossing location data with international official border crossing points only; NB: population statistics should have a clear description of the methodology, caveats and limitations) \nIDP tracking data at governorate (ADM2) level \nDaily population estimates at governorate (ADM2) level\nOrganization name and generic contact information including general email and phone number, except if organizations request their name and generic contact information not to be public \nCasualty numbers at governorate (ADM2) level \nDamage information based on satellite imagery at the neighborhood (ADM4) level"
+        ],
+        "medium sensitivity": [
+            "Telecommunication connectivity data at the settlement (ADM3) level or lower\nNeeds assessment data at the settlement (ADM3) level or lower\nSurvey results at the settlement (ADM3) level or lower\nSecurity incidents data generalized & aggregated to the governorate (ADM2) level \nData on education facilities including on damages and functionality level, with exact locations (e.g. coordinates) \nData on WASH facilities including on damages and functionality level, with locations (e.g. coordinates)\nResponse tracking data at the neighborhood (ADM4) level or site (ADM5) level, excluding partner names if requested by Clusters or partners \nIDP tracking data at the settlement (ADM3) level or lower\nInformation on evacuation of staff"
+        ],
+        "high sensitivity": [
+            "Needs assessment data at the settlement (ADM3) level or lower\nSurvey results at the neighborhood (ADM4) level or lower\nCollective site data with locations (e.g. coordinates) \nExplosive ordnance contamination data (exact locations or at ADM3 level) \nAid-worker contact details and contact lists if consent for sharing has not been obtained \nMinutes of internal meetings \nInformation on evacuation of affected people or where local organizations are supporting relocation \nData on IDP Shelter facilities with locations (e.g. coordinates)"
+        ],
+        "severe sensitivity": [
+            "Humanitarian notification information \nRaw survey data, such as individual survey responses, at the respondent or household level \nData on attacks on health facilities with locations (e.g. coordinates) \n5W data at the settlement (ADM4) level or site (ADM5) level \nLive data on population movement based on metadata generated by electronic devices or based on satellite imagery, aggregated to the ADM3 level or lower \nPersonal data of beneficiaries, such as beneficiary lists and patient records \nMessages received through AAP and CwC mechanisms \nInformation from PSEA forms \nCase management data, including data on gender-based violence cases and child protection cases\nData related to military presence and activity\nData managed in Humanitarian Notification Systems, including data on notified sites and movements"
+        ]
+    },
+    "OCHA Somalia 1 2024 VERSION": {
+        "location": "somalia",
+        "low/no sensitivity": [
+            "- Humanitarian Needs and Response Plan and underlying national-level data\n- Common Operational Datasets (CODs)\n- 3W/4W data, partner presence mapping and response monitoring data (without Partner names in certain areas) at state, regional (ADM1) and district (ADM2) level)\n- Multi cluster/cluster specific Needs Assessments and related data aggregated at district (ADM2) level \n- Facility data with locations (e.g. coordinates), including for health facilities, education facilities, nutrition centers, marketplaces and water points, unless indicated otherwise by the relevant cluster or partner\n- Analysis based on survey results, e.g. the SMART survey, coverage surveys\n- Analysis based on mass MUAC screening\n- Disease related information\n- Flow monitoring registry and report\n- Data included in the Emergency Tracking Tool dashboard \n- Baseline IDP assessment results\n- Protection risk monitoring results at the state level\n- Protection of civilians\u2019 related data in UN SG quarterly reports on the situation in Somalia 1\n- Data on humanitarian access aggregated to the administrative level reflected in humanitarian access snapshots\n- General access map at a low resolution for presentation purposes (similar to the type of access map published in the HNRP)"
+        ],
+        "medium sensitivity": [
+            "- Aggregated survey results at the area level (Operational Zones (\u2018OPZ\u2019))\n- Information on access restrictions (including the number and type of access restriction) aggregated to the district level (ADM2)\n- Emergency Tracking Tool results"
+        ],
+        "high sensitivity": [
+            "- Aid-Worker Contact Details\n- Anonymized survey results, e.g. figures, at the settlement level (ADM3)\n- Participatory Migration Mapping reports\n- Data on demographic composition at the household level\n- Anonymized line lists"
+        ],
+        "severe sensitivity": [
+            "- Identifiable survey data, e.g. individual survey responses\n- Personal data of beneficiaries (including beneficiary lists, patient records, line lists, and biometric registration data) ,  \n- Access actor mapping data\n- Security incident and access incident records\n- Identifiable Mass MUAC survey results\n- Identifiable flow monitoring survey results\n- Participatory Migration Mapping results\n- Individual reports on violations of International Humanitarian Law or Human Rights Law\n- Data on gender-based violence cases and cases of sexual exploitation and abuse\n- Data related to military and armed groups presence and activity, including Areas of Control\n-  Anonymized mapping of vulnerable groups at heightened risk of marginalization or stigmatization (e.g. minorities)"
+        ]
+    },
+    "OCHA South Sudan": {
+        "location": "south sudan",
+        "low/no sensitivity": [
+            "HNO and underlying summary data \nInter-Sector Needs Assessment (ISNA) Summary Data (State and County summary tables)\nFSNMS dashboards and information products (IPC analysis at county level)\nCODs; Access snapshots\n3W/4W data (at national, state, and county level)\nPLR (Pipeline Requests); Needs Assessment Reports"
+        ],
+        "medium sensitivity": [
+            "ISNA data aggregated at the county-level \nSeverity inputs for the Needs Assessment Working Group or other similar functional groups (Cash)"
+        ],
+        "high sensitivity": [
+            "ISNA data aggregated at the payam-level (for ISNA TWG members only)\nFSNMS data aggregated at the county level"
+        ],
+        "severe sensitivity": [
+            "Anonymized ISNA data at the household level\nAnonymized FSNMS data aggregated at the County level\nPersonal data of beneficiaries (i.e. Beneficiary lists)\nAny other anonymized data that could, under certain circumstances, identify individuals or small groups of vulnerable individuals thus putting them in danger"
+        ]
+    },
+    "OCHA Sudan 2024": {
+        "location": "sudan",
+        "low/no sensitivity": [
+            "- HNRP and underlying national-level aggregate survey results\n- CODs AB / PS\n- 3W/4W/5W data (at ADM1 (State) and ADM2 (Locality) level)\n- Access snapshots including ADM0 (Country) level data from the Access Monitoring and Reporting Framework (AMRF)\nand Humanitarian Information Sharing Mechanism (HISM)\n- Presentations during coordination meeting (unless otherwise classified)\n- Assessment reports (unless otherwise classified)\n- Needs monitoring factsheet and dashboard\n- Response monitoring dashboards  \n- Aggregated Protection hotspot dataset at ADM2 levels\n- Access severity at ADM2 levels \n- Evidence based generation from CFM (trends and analysis)"
+        ],
+        "medium sensitivity": [
+            "- Aggregated survey results (e.g. aggregated to the locality level)\n- 3W/4W/5W data below ADM2 level\n- Partner level submissions to the Access Monitoring and Reporting Framework (AMRF)\n- Organization contact and mailing lists with names and locations of partners \n- Partner level submission to CFM excluding information designated as high and severe sensitivity.  \n- Community Feedback Mechanism      Biographical data"
+        ],
+        "high sensitivity": [
+            "- Anonymized and aggregated survey results (e.g., aggregated to the household level and with additional disaggregation based on different indicators)\n- Aid-Worker Contact Details / Lists if consent for sharing has not been obtained\n- Data on location of responses if it includes personal data of partner personnel                \n- Partner level data on convoy movements submitted through the HISM\n- Data on CFM sensitive cases (Protection, GBV, Child Protection, PSEA, Fraud and corruption, code of conduct) at ADM3 level\n- Data managed in the HERAMS"
+        ],
+        "severe sensitivity": [
+            "- Raw survey data, e.g. individual survey responses at HH-level data\n- Personal data of key informants for the needs monitoring\n- Personal data of beneficiaries (i.e., Beneficiary lists) , \n- Personal data of humanitarians managed for the visa tracking service\n- Access restrictions at ADM2 (locality) level\n - Complete data on convoy movements submitted through the HISM, including vehicle IDs and submitter personal data\n- Individual GBV cases, locations, service providers, alleged perpetrators\n- Children\u2019s personal data     , locations, service providers,      \n- Protection case management /incidence monitoring data \n- Raw data on CFM, SEA and fraud/corruption cases,"
+        ]
+    },
+    "OCHA Syria": {
+        "location": "syria",
+        "low/no sensitivity": [
+            "- Humanitarian Needs\nOverview and underlying data (people in need - PiN and severity at subdistrict level)\n- The Humanitarian Response Plan\n- Administrative lists (admin1 to admin4) and GIS layers\n- Access severity (subdistrict level)\n- Partner presence at district level\n- Sub-district level public health facility information about functionality, accessibility and damage.\n- Number of attacks on health facilities (facility level)"
+        ],
+        "medium sensitivity": [
+            "- Inter-sector assessment datasets (i.e., MSNA)\n- Number of sector partners (community-level)\n- Infrastructure lists (i.e. number of schools, boreholes, bakeries at community-level)\n- Number of beneficiaries assisted by sector at subdistrict level\n- Population and IDP data at community level\n- Assessment registry\n- protection sector service mapping\n\u207b Public health facility information at community level, excluding GIS coordinates.- Infrastructure lists (i.e.number of schools, boreholes, bakeries at community-level)\n- Number of beneficiaries assisted by sector at subdistrict level\n- Population and IDP data at community level\n- Assessment registry\n- protection sector service mapping\n\u207b Public health facility information at community level, excluding GIS coordinates."
+        ],
+        "high sensitivity": [
+            "- Number of beneficiaries assisted and services provided (community level) \n- Number of humanitarian workers (community-level)"
+        ],
+        "severe sensitivity": [
+            "- Names and locations of humanitarian workers \n- Warehouse locations \n- Personal data (i.e. beneficiary lists) [footnote: Personal data should be managed in accordance with established frameworks for personal data protection. This means that any data management activities that include the management of personal data must be guided by national and regional data protection laws or organizational data protection policies.]\n- Data generated through the humanitarian access monitoring and reporting framework.\n\u207b GIS coordinates for public health facilities"
+        ]
+    },
+    "OCHA Ukraine": {
+        "location": "ukraine",
+        "low/no sensitivity": [
+            "Situation Reports\n\u2022 Snapshot data\n\u2022 Flash appeal\n\u2022 Data included in the Humanitarian Needs Overview\n\u2022 Public strategy and planning documents such as the Humanitarian Response Plan\n\u2022 Facility data at the oblast (ADM1) level\n\u2022 Access severity level aggregated to the raion (ADM2) level\n\u2022 5W data (Who, What, Where, When, for Whom) in Government-controlled areas at the hromada (ADM3) level; with exception for Health Cluster data at the raion (ADM2) level\n\u2022 5W data in temporary Russian military controlled areas at the oblast level (with anonymization of partner names and removal of other information, if specified by the Cluster)\n\u2022 Access restrictions aggregated to the raion (ADM2) level\n\u2022 Survey and needs assessment data aggregated to the oblast\n(ADM1) level in government-\ncontrolled areas\n\u2022 Aid-worker contact details and\ncontact lists if consent for sharing\nhas been obtained\n\u2022 Security incidents aggregated to\nthe oblast (ADM1) level (NB: the\nsource should be validated)\n\u2022 Common Operational Datasets\n(NB: border crossing location data\nwith international official border\ncrossing points only; NB: population\nstatistics should have a clear\ndescription of the methodology,\ncaveats and limitations)\n\u2022 Organization name and generic\ncontact information including\ngeneral email and phone number"
+        ],
+        "medium sensitivity": [
+            "\u2022 Needs assessment data aggregated\nto the raion (ADM2) level or lower\n(NB: this data should not be attached\nto the record in the Assessment\nRegistry)\n\u2022 Survey results aggregated to the\nraion (ADM2) level or lower and with\nadditional disaggregation based on\ndifferent indicators\n\u2022 Collective site data with site names\n\u2022 Facility data at raion (ADM2) level,\nexcept health facilities\n\u2022 Live Humanitarian Mission\nMovement Notification data\n\u2022 Security incidents data generalized\n& aggregated to raion (ADM2) level\n\u2022 5W data, except for Health Cluster\ndata,in Government-controlled areas at the settlement (ADM4) level or site\n(ADM5) level\n\u2022 5W data, except for Health Cluster\ndata, in temporary Russian military\ncontrolled areas at the raion (ADM2)\nlevel (with anonymization of partner\nnames and removal of other\ninformation, if specified by the\nCluster)\n\u2022 Access restrictions at hromadas\n(ADM3) level or lower\n\u2022 Access incident data at raion\n(ADM2) level or lower\n\u2022 Daily population estimates at raion\n(ADM2) level or lower\n\u2022 Delimitation of new areas under the\ncontrol of the Russian Military,\ndisputed areas and related data"
+        ],
+        "high sensitivity": [
+            "\u2022 Needs assessment data aggregated\nto the hromada (ADM3) level or lower\n(NB: this data should not be attached\nto the record in the Assessment\nRegistry)\n\u2022 Survey results aggregated to the\nhromada (ADM3) level or lower and\nwith additional disaggregation based\non different indicators\n\u2022 Survey and needs assessment\ndata generated by Health Cluster\npartners in areas under the control of\nthe Russian Military (NB: Analysis\nReports may be shared upon\nrequest)\n\u2022 Collective site data with locations\n(e.g. coordinates)\n\u2022 Facility data at the hromada (ADM3)\nlevel\n\u2022 5W data for Health Cluster in\nGovernment-controlled areas at\nhromada (ADM3) level\n\u2022 5W data, except for Health Cluster\ndata, in temporary Russian military\ncontrolled areas at the hromada\n(ADM3) level(with anonymization of\npartner names and removal of other information, if specified by the\nCluster)\n\u2022 Explosive ordnance contamination\ndata (exact locations or at hromada\nlevel)\n\u2022 Aid-worker contact details and\ncontact lists if consent for sharing\nhas not been obtained\n\u2022 Minutes of internal meetings\n\u2022 Information on evacuation or\nwhere local organizations are\nsupporting relocation"
+        ],
+        "severe sensitivity": [
+            "\u2022 Raw survey data, such as individual\nsurvey responses, at the respondent\nor household level\n\u2022 Facility data with locations (e.g.\ncoordinates)\n\u2022 Attacks on health facilities with\nlocations (e.g. coordinates)\n\u2022 5W data in Government-controlled\nareas at the settlement (ADM4) level\nor site (ADM5) level\n\u2022 5W data in temporary Russian\nmilitary controlled areas at the\nsettlement (ADM4) level or site\n(ADM5) level; Health Cluster data at\nALL admin levels (ADM1,2,3,4,5)\n\u2022 Live data on population movement\nbased on metadata generated by\nelectronic devices or based on\nsatellite imagery, aggregated to the\noblast level or lower\n\u2022 Personal data of beneficiaries, such\nas beneficiary lists and patient\nrecords5\n\u2022 Messages received through AAP\nand CwC mechanisms\n\u2022 Information from PSEA forms\n\u2022 Agreements between Humanitarian\nCoordinator, OCHA Head of Office and/or partners to conduct\nassessments"
+        ]
+    },
+    "OCHA Venezuela": {
+        "location": "venezuela",
+        "low/no sensitivity": [
+            "Productos de informacio\u0301n basados en datos 4W\n\u2022 Informes de situaci\u00f3n (SitRep)\n\u2022 Archivos shapefiles y conjuntos de datos de poblaci\u00f3n. (Censo)"
+        ],
+        "medium sensitivity": [
+            "\u2022 Datos de evaluaciones de necesidades sectoriales.\n\u2022 Determinados conjuntos de datos oficiales\n\u2022 Resultados de encuestas\n\u2022 Monitoreo y seguimiento de contextos espec\u00edficos y/o sensibles.\n\u2022 Actas de reuni\u00f3n"
+        ],
+        "high sensitivity": [
+            "Conjuntos de datos oficiales confidenciales\n\u2022 Respuestas individuales de encuestas.\n\u2022 Datos de contacto de los cooperantes / Listas de contactos"
+        ],
+        "severe sensitivity": [
+            "Respuestas individuales de encuestas en temas de alta sensibilidad.\n\u2022 Datos personales (es decir, listas de beneficiarios)"
+        ]
+    },
+    "OCHA Yemen": {
+        "location": "yemen",
+        "low/no sensitivity": [
+            "- HNO and underlying national-level aggregate and anonymized survey results\n- Admin boundaries\n- CODs (e.g. population dataset)\n- Access restrictions (district level)\n- 3W/4W data (at national and district level)"
+        ],
+        "medium sensitivity": [
+            "- Aggregated district-level survey results (e.g. aggregated to the district level with additional disaggregation based on different indicators) which are fully anonymized using Statistical Disclosure Control and/or other methods, to prevent any re-identification\n- District-level information on overall protection situation\n- 3W/4W data (at the discretion of Clusters/AORs)"
+        ],
+        "high sensitivity": [
+            "- Household-level survey results (e.g. household level with disaggregation based on different indicators) which are fully anonymized using Statistical Disclosure Control and/or other methods, to prevent any re-identification\n- Aid-Worker Contact Details / Lists"
+        ],
+        "severe sensitivity": [
+            "- Raw survey data, e.g. individual survey responses with no anonymization methods applied\n- Personal data of beneficiaries (including beneficiary lists, case management records, protection monitoring at the individual level, patient data/records),"
+        ]
+    }
+}
