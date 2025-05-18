@@ -48,7 +48,7 @@ def update_github_file(content: dict):
         "message": "Update annotation feedback via Streamlit interface",
         "content": base64.b64encode(json.dumps(content, indent=2).encode()).decode(),
         "sha": sha,
-        "branch": "main"  # zorg dat dit overeenkomt met je default branch
+        "branch": "main"
     }
 
     r = requests.put(GITHUB_API_URL, headers=headers, json=payload)
@@ -64,7 +64,7 @@ def update_github_file(content: dict):
 st.set_page_config(layout="wide")
 st.title("✅ Agree or Reject GPT-4o Annotations")
 
-def get_unconfirmed_column():
+def get_next_table():
     for fname, entry in test_data.items():
         for colname, coldata in entry["columns"].items():
             explanations = [
@@ -73,19 +73,17 @@ def get_unconfirmed_column():
                 "non_pii_explanation",
                 "non_pii_sensitivity_level_explanation"
             ]
-            votes = sum(coldata.get(f"{k}_agree", 0) + coldata.get(f"{k}_reject", 0) >= 2 for k in explanations)
-            if votes < len(explanations):
-                return fname, colname
-    return None, None
+            if any(coldata.get(f"{k}_agree", 0) + coldata.get(f"{k}_reject", 0) < 2 for k in explanations):
+                return fname
+    return None
 
-selected_file, current_col = get_unconfirmed_column()
+selected_file = get_next_table()
 if not selected_file:
-    st.success("🎉 All explanations have been confirmed or rejected at least twice.")
+    st.success("🎉 All tables fully annotated.")
     st.stop()
 
 file_entry = test_data[selected_file]
 columns = file_entry["columns"]
-col_data = columns[current_col]
 country = file_entry["metadata"]["country"].capitalize()
 isp_used = file_entry["metadata"]["isp_used"]
 
@@ -97,45 +95,42 @@ with left_col:
     st.dataframe(df, use_container_width=True)
 
     st.markdown("---")
-    st.subheader(f"🧠 Explanation for Column: `{current_col}`")
+    st.subheader(f"🧠 Annotations for File: `{selected_file}`")
 
-    updated = False
-    updated_keys = []
+    vote_changed = False
 
-    def vote_section(label, key):
-        explanation = col_data.get(key, "")
-        if explanation:
-            st.markdown(f"**{label}**")
-            st.markdown(f"> {explanation}")
+    for current_col, col_data in columns.items():
+        st.markdown(f"### Column: `{current_col}`")
+
+        def vote_block(label, key):
+            nonlocal vote_changed
+            explanation = col_data.get(key, "")
+            if not explanation:
+                return
             agree_key = f"{key}_agree"
             reject_key = f"{key}_reject"
-
+            st.markdown(f"**{label}**")
+            st.markdown(f"> {explanation}")
             if col_data.get(agree_key, 0) + col_data.get(reject_key, 0) < 2:
-                col1, col2 = st.columns(2)
-                with col1:
-                    if st.button(f"✅ Agree with {label}", key=f"btn_agree_{key}"):
+                c1, c2 = st.columns([1, 1])
+                with c1:
+                    if st.button(f"✅ Agree with {label}", key=f"agree_{current_col}_{key}"):
                         col_data[agree_key] = col_data.get(agree_key, 0) + 1
-                        updated_keys.append(agree_key)
-                        st.success(f"You agreed with GPT-4o on {label}")
-                with col2:
-                    if st.button(f"❌ Reject {label}", key=f"btn_reject_{key}"):
+                        vote_changed = True
+                with c2:
+                    if st.button(f"❌ Reject {label}", key=f"reject_{current_col}_{key}"):
                         col_data[reject_key] = col_data.get(reject_key, 0) + 1
-                        updated_keys.append(reject_key)
-                        st.warning(f"You rejected GPT-4o on {label}")
+                        vote_changed = True
             else:
                 st.info(f"Feedback already collected for {label} ✅")
-        return False
 
-    vote1 = vote_section("PII Reasoning", "pii_explanation")
-    updated |= vote1
-    vote2 = vote_section("PII Sensitivity Level", "pii_sensitivity_level_explanation")
-    updated |= vote2
-    vote3 = vote_section("Non-PII Reasoning", "non_pii_explanation")
-    updated |= vote3
-    vote4 = vote_section("Non-PII Sensitivity Level", "non_pii_sensitivity_level_explanation")
-    updated |= vote4
+        vote_block("PII Reasoning", "pii_explanation")
+        vote_block("PII Sensitivity Level", "pii_sensitivity_level_explanation")
+        vote_block("Non-PII Reasoning", "non_pii_explanation")
+        vote_block("Non-PII Sensitivity Level", "non_pii_sensitivity_level_explanation")
+        st.markdown("---")
 
-    if updated:
+    if vote_changed:
         if st.button("💾 Save and continue"):
             if GITHUB_TOKEN:
                 success = update_github_file(test_data)
