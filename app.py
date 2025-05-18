@@ -4,7 +4,7 @@ import pandas as pd
 from pathlib import Path
 import base64
 import requests
-import streamlit.components.v1 as components
+import random
 
 # Load test and ISP data
 TEST_PATH = Path("test.json")
@@ -53,15 +53,43 @@ def update_github_file(content: dict):
 st.set_page_config(layout="wide")
 st.title("🔐 Column Labeling Interface for Sensitive Data")
 
-selected_file = st.selectbox("Select a file to annotate", list(test_data.keys()))
+# Select a random table with incomplete annotation (each column needs two annotations)
+def get_incomplete_file():
+    for fname, entry in test_data.items():
+        incomplete = any(
+            not all(
+                f"pii_{i}" in col and f"pii_sensitivity_level_{i}" in col and f"non_pii_{i}" in col and f"non_pii_sensitivity_level_{i}" in col
+                for i in [1, 2]
+            )
+            for col in entry["columns"].values()
+        )
+        if incomplete:
+            return fname
+    return None
+
+selected_file = get_incomplete_file()
+if not selected_file:
+    st.success("🎉 All files and columns have been annotated twice!")
+    st.stop()
+
 file_entry = test_data[selected_file]
 columns = file_entry["columns"]
-column_names = list(columns.keys())
+column_names = [col for col, data in columns.items() if not (
+    all(f"pii_{i}" in data and f"pii_sensitivity_level_{i}" in data and f"non_pii_{i}" in data and f"non_pii_sensitivity_level_{i}" in data for i in [1, 2])
+)]
+
+if not column_names:
+    st.info("✅ All columns in this file have been annotated twice.")
+    st.stop()
 
 if "column_index" not in st.session_state:
     st.session_state.column_index = 0
 
 current_index = st.session_state.column_index
+if current_index >= len(column_names):
+    current_index = 0
+    st.session_state.column_index = 0
+
 current_col = column_names[current_index]
 
 country = file_entry["metadata"]["country"].capitalize()
@@ -88,18 +116,26 @@ with left_col:
         st.markdown("**Sensitivity Level Justification by GPT-4o:**")
         st.markdown(f"> {non_pii_level_expl}")
 
-    pii = st.selectbox(f"PII label for '{current_col}'", ["None", "GENERIC_ID", "PERSON_NAME", "ORGANIZATION_NAME", "PHONE_NUMBER", "EMAIL"], index=0, key=f"pii_{current_col}")
-    pii_level = st.selectbox(f"PII sensitivity level for '{current_col}'", ["NON_SENSITIVE", "LOW_SENSITIVE", "MEDIUM_SENSITIVE", "HIGH_SENSITIVE"], index=0, key=f"pii_level_{current_col}")
-    non_pii = st.selectbox(f"Non-PII label for '{current_col}'", ["NON_SENSITIVE", "SENSITIVE"], index=0, key=f"non_pii_{current_col}")
-    non_pii_level = st.selectbox(f"Non-PII sensitivity level for '{current_col}'", ["NON_SENSITIVE", "MEDIUM_SENSITIVE", "HIGH_SENSITIVE"], index=0, key=f"non_pii_level_{current_col}")
+    # Choose which variant to annotate
+    existing_keys = columns[current_col].keys()
+    variant = 1 if not f"pii_1" in existing_keys else 2 if not f"pii_2" in existing_keys else None
 
-    if st.button("✅ Save annotation"):
-        columns[current_col]["pii_gt"] = pii
-        columns[current_col]["pii_sensitivity_level"] = pii_level
-        columns[current_col]["non_pii"] = non_pii
-        columns[current_col]["non_pii_sensitivity_level"] = non_pii_level
-        updated = True
-        st.success(f"Saved annotations for column '{current_col}'")
+    if variant:
+        pii = st.selectbox(f"PII label for '{current_col}'", ["None", "GENERIC_ID", "PERSON_NAME", "ORGANIZATION_NAME", "PHONE_NUMBER", "EMAIL"], index=0, key=f"pii_{current_col}_{variant}")
+        pii_level = st.selectbox(f"PII sensitivity level for '{current_col}'", ["NON_SENSITIVE", "LOW_SENSITIVE", "MEDIUM_SENSITIVE", "HIGH_SENSITIVE"], index=0, key=f"pii_level_{current_col}_{variant}")
+        non_pii = st.selectbox(f"Non-PII label for '{current_col}'", ["NON_SENSITIVE", "SENSITIVE"], index=0, key=f"non_pii_{current_col}_{variant}")
+        non_pii_level = st.selectbox(f"Non-PII sensitivity level for '{current_col}'", ["NON_SENSITIVE", "MEDIUM_SENSITIVE", "HIGH_SENSITIVE"], index=0, key=f"non_pii_level_{current_col}_{variant}")
+
+        if st.button("✅ Save annotation"):
+            columns[current_col][f"pii_{variant}"] = pii
+            columns[current_col][f"pii_sensitivity_level_{variant}"] = pii_level
+            columns[current_col][f"non_pii_{variant}"] = non_pii
+            columns[current_col][f"non_pii_sensitivity_level_{variant}"] = non_pii_level
+            updated = True
+            st.success(f"Saved annotation variant {variant} for column '{current_col}'")
+
+    else:
+        st.info("✅ This column has already been annotated twice.")
 
     nav_col1, nav_col2 = st.columns([1, 1])
     with nav_col1:
