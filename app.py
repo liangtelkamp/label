@@ -2,13 +2,57 @@ import streamlit as st
 import json
 import pandas as pd
 from pathlib import Path
+import base64
+import requests
 
-# Load test data
+# Load test and ISP data
 TEST_PATH = Path("test.json")
 ISPS_PATH = Path("isps.json")
 
 test_data = json.load(TEST_PATH.open())
 isps_data = json.load(ISPS_PATH.open())
+
+# GitHub secrets (optional)
+GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN")
+REPO_OWNER = st.secrets.get("REPO_OWNER")
+REPO_NAME = st.secrets.get("REPO_NAME")
+TARGET_FILE_PATH = st.secrets.get("TARGET_FILE_PATH", "test.json")
+GITHUB_API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{TARGET_FILE_PATH}"
+
+def get_github_file_sha():
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    r = requests.get(GITHUB_API_URL, headers=headers)
+    if r.status_code == 200:
+        return r.json()["sha"]
+    else:
+        st.error(f"❌ Failed to fetch SHA from GitHub: {r.text}")
+        return None
+
+def update_github_file(content: dict):
+    """Commit updated test.json to GitHub"""
+    if not GITHUB_TOKEN:
+        st.warning("⚠️ GitHub token not found. Writing only locally.")
+        return False
+
+    sha = get_github_file_sha()
+    if not sha:
+        return False
+
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github+json"
+    }
+    data = {
+        "message": "Update column annotations via Streamlit interface",
+        "content": base64.b64encode(json.dumps(content, indent=2).encode()).decode(),
+        "sha": sha
+    }
+    r = requests.put(GITHUB_API_URL, headers=headers, json=data)
+    if r.status_code == 200 or r.status_code == 201:
+        return True
+    else:
+        st.error(f"❌ Failed to commit to GitHub: {r.status_code} - {r.text}")
+        return False
 
 st.title("🔐 Column Labeling Interface for Sensitive Data")
 
@@ -58,7 +102,7 @@ for col in columns:
 
     # Update dictionary
     if st.button(f"✅ Save annotation for '{col}'"):
-        columns[col]["pii"] = pii
+        columns[col]["pii_gt"] = pii
         columns[col]["pii_sensitivity_level"] = pii_level
         columns[col]["non_pii"] = non_pii
         columns[col]["non_pii_sensitivity_level"] = non_pii_level
@@ -67,6 +111,11 @@ for col in columns:
 
 # Save updated file
 if updated:
-    with open(TEST_PATH, "w") as f:
-        json.dump(test_data, f, indent=2)
-    st.info("✅ test.json updated with new labels.")
+    if GITHUB_TOKEN:
+        success = update_github_file(test_data)
+        if success:
+            st.info("✅ Annotations saved to GitHub successfully.")
+    else:
+        with open(TEST_PATH, "w") as f:
+            json.dump(test_data, f, indent=2)
+        st.info("✅ test.json updated locally.")
