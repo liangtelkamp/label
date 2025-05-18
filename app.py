@@ -123,7 +123,7 @@ with left_col:
                         updated_keys.append(reject_key)
                         st.warning(f"You rejected GPT-4o on {label}")
             else:
-                st.info(f"Feedback already collected for {label} ✅")
+                st.info(f"Feedback already collected for {label} ✅") 
         return False
 
     updated |= vote_section("PII Reasoning", "pii_explanation")
