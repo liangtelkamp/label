@@ -39,7 +39,15 @@
         "non_pii_gpt-4o_sensitivity_level_gpt-4o": "NON_SENSITIVE",
         "pii_gpt-4o": "None",
         "non_pii": "NON_SENSITIVE",
-        "non_pii_sensitivity_level": "NON_SENSITIVE"
+        "non_pii_sensitivity_level": "NON_SENSITIVE",
+        "pii_1": "GENERIC_ID",
+        "pii_sensitivity_level_1": "NON_SENSITIVE",
+        "non_pii_1": "NON_SENSITIVE",
+        "non_pii_sensitivity_level_1": "NON_SENSITIVE",
+        "pii_2": "GENERIC_ID",
+        "pii_sensitivity_level_2": "NON_SENSITIVE",
+        "non_pii_2": "NON_SENSITIVE",
+        "non_pii_sensitivity_level_2": "NON_SENSITIVE"
       },
       "facility_name": {
         "records": [
