@@ -105,11 +105,11 @@ with left_col:
     with nav_col1:
         if st.button("⬅️ Previous") and current_index > 0:
             st.session_state.column_index -= 1
-            st.experimental_rerun()
+            st.rerun()
     with nav_col2:
         if st.button("Next ➡️") and current_index < len(column_names) - 1:
             st.session_state.column_index += 1
-            st.experimental_rerun()
+            st.rerun()
 
     if updated:
         if GITHUB_TOKEN:
