@@ -32,7 +32,7 @@ def get_github_file_sha():
 def update_github_file(content: dict):
     if not GITHUB_TOKEN:
         st.warning("⚠️ GitHub token not found. Writing only locally.")
-        return False
+        return True
 
     sha = get_github_file_sha()
     if not sha:
@@ -123,13 +123,17 @@ with left_col:
                         updated_keys.append(reject_key)
                         st.warning(f"You rejected GPT-4o on {label}")
             else:
-                st.info(f"Feedback already collected for {label} ✅") 
-        return True
+                st.info(f"Feedback already collected for {label} ✅")
+        return False
 
-    updated |= vote_section("PII Reasoning", "pii_explanation")
-    updated |= vote_section("PII Sensitivity Level", "pii_sensitivity_level_explanation")
-    updated |= vote_section("Non-PII Reasoning", "non_pii_explanation")
-    updated |= vote_section("Non-PII Sensitivity Level", "non_pii_sensitivity_level_explanation")
+    vote1 = vote_section("PII Reasoning", "pii_explanation")
+    updated |= vote1
+    vote2 = vote_section("PII Sensitivity Level", "pii_sensitivity_level_explanation")
+    updated |= vote2
+    vote3 = vote_section("Non-PII Reasoning", "non_pii_explanation")
+    updated |= vote3
+    vote4 = vote_section("Non-PII Sensitivity Level", "non_pii_sensitivity_level_explanation")
+    updated |= vote4
 
     if updated:
         if st.button("💾 Save and continue"):
