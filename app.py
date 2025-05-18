@@ -103,7 +103,6 @@ with left_col:
         st.markdown(f"### Column: `{current_col}`")
 
         def vote_block(label, key):
-            nonlocal vote_changed
             explanation = col_data.get(key, "")
             if not explanation:
                 return
