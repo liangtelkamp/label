@@ -106,11 +106,13 @@ with left_col:
                         col_data[agree_key] = col_data.get(agree_key, 0) + 1
                         updated_keys.append(agree_key)
                         st.success(f"You agreed with GPT-4o on {label}")
+                        return True
                 with col2:
                     if st.button(f"❌ Reject {label}", key=f"btn_reject_{key}"):
                         col_data[reject_key] = col_data.get(reject_key, 0) + 1
                         updated_keys.append(reject_key)
                         st.warning(f"You rejected GPT-4o on {label}")
+                        return True
             else:
                 st.info(f"Feedback already collected for {label} ✅")
         return False
