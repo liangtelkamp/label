@@ -124,7 +124,7 @@ with left_col:
                         st.warning(f"You rejected GPT-4o on {label}")
             else:
                 st.info(f"Feedback already collected for {label} ✅") 
-        return False
+        return True
 
     updated |= vote_section("PII Reasoning", "pii_explanation")
     updated |= vote_section("PII Sensitivity Level", "pii_sensitivity_level_explanation")
