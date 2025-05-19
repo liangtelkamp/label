@@ -51,7 +51,6 @@ def update_github_file(content: dict):
     return r.status_code in [200, 201]
 
 st.set_page_config(layout="wide")
-st.title("🔐 Column Labeling Interface for Sensitive Data")
 
 # Select a random table with incomplete annotation (each column needs two annotations)
 def get_incomplete_file():
