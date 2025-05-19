@@ -20,7 +20,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"facility_id\" and the sample values provided ('1', '2', '3', '4', '5') suggest that this column contains generic identifiers for facilities. These identifiers are not linked to any specific individual and do not fall under any of the PII categories listed. Therefore, this",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -42,7 +42,7 @@
           "Centre de Formation de Niamey",
           "\u00c9cole Primaire de Tillab\u00e9ri"
         ],
-        "pii": "None",
+        "pii": "ORGANIZATION_NAME",
         "pii_explanation": "None\n\nThe column name \"facility_name\" and the sample values provided are names of educational institutions or facilities. These do not fall under any specific category of Personally Identifiable Information (PII) as listed in the provided PII entities list. They are names of organizations, which are not considered PII.",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -136,7 +136,7 @@
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
         "non_pii": "NON_SENSITIVE",
         "non_pii_explanation": "NON_SENSITIVE\n\nThe column \"access_constraints\" contains information about physical access limitations to various facilities, such as flooding, road conditions, and seasonal issues. While this information is operationally relevant, it does not inherently contain sensitive geopolitical data related to conflicts, military activities, or humanitarian issues as per the United Nations Information Sharing",
-        "non_pii_sensitivity_level": "NON_SENSITIVE",
+        "non_pii_sensitivity_level": "MEDIUM_SENSITIVE",
         "non_pii_sensitivity_level_explanation": "NON_SENSITIVE"
       },
       "security_situation": {
@@ -524,7 +524,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"camp_id\" and the sample values provided ('1', '2', '3', '4', '5') suggest that this column contains generic identifiers for camps, likely used for internal tracking or categorization. These values do not match any specific type of PII, such as names,",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -776,7 +776,7 @@
           "UKR009",
           "UKR010"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"facility_id\" and the sample values provided ('UKR001', 'UKR002', 'UKR003', 'UKR004', 'UKR005') suggest that this column contains identifiers for facilities, likely used for internal tracking or categorization. These values do not correspond to any",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -1028,7 +1028,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"case_id\" and the sample values provided ('1', '2', '3', '4', '5') suggest that this column contains generic identifiers for cases. These are likely internal identifiers used for tracking purposes and do not fall under any specific PII category such as names, addresses,",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -1280,7 +1280,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"site_id\" and the sample values provided ('1', '2', '3', '4', '5') suggest that this column contains generic identifiers for sites, which are likely internal or system-specific IDs. These do not correspond to any specific type of PII listed, such as personal",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -1532,7 +1532,7 @@
           "A09",
           "A10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"assessment_id\" and the sample values provided ('A01', 'A02', 'A03', 'A04', 'A05') suggest that this column contains identifiers for assessments. These are likely generic identifiers used to label or categorize assessments and do not correspond to any specific type of Personally",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -1784,7 +1784,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"organization_id\" and the sample values provided ('1', '2', '3', '4', '5') suggest that this is a generic identifier used to represent organizations in a dataset. The values are numerical and sequential, indicating they are likely used for internal tracking or categorization purposes rather",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -2036,7 +2036,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None. The column name \"survey_id\" and its sample values suggest it is a generic identifier used for survey responses. The values are simple numerical identifiers and do not correspond to any specific type of PII listed.",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -2212,7 +2212,7 @@
           "R009",
           "R010"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"respondent_id\" and the sample values provided ('R001', 'R002', 'R003', 'R004', 'R005') suggest that this column contains generic identifiers assigned to respondents. These identifiers do not match any specific PII category such as IP addresses, email addresses,",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -2562,7 +2562,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column \"report_id\" with sample values ['1', '2', '3', '4', '5'] appears to contain generic identifiers that are likely used internally within a system to uniquely identify reports. These values do not match any specific type of PII from the provided list, such as IP addresses",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -2814,7 +2814,7 @@
           "NW",
           "SW"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"assessment_id\" and the sample values provided ('NW', 'SW', 'NW', 'SW', 'NW') do not match any specific type of PII from the list. The values appear to be codes or abbreviations that do not contain personal information.",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -3088,7 +3088,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"incident_id\" and the sample values provided ('1', '2', '3', '4', '5') suggest that this column contains generic identifiers for incidents. These values are sequential numbers that do not correspond to any specific type of PII as defined in the provided list. They do",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -3636,7 +3636,7 @@
           "2700",
           "2000"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"region_id\" and the sample values provided ('2500', '1500', '3200', '1800', '2300') suggest that this is an identifier for regions, likely used internally within a system or dataset. These values do not match any specific type of PII from",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -3866,7 +3866,7 @@
           "F009",
           "F010"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"facility_id\" and the sample values provided ('F001', 'F002', 'F003', 'F004', 'F005') suggest that this is an identifier for facilities, likely used internally within an organization. These values do not match any specific type of PII from the provided",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -4118,7 +4118,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"report_id\" and the sample values provided ('1', '2', '3', '4', '5') suggest that this is a generic identifier used to uniquely identify reports. The values are simple numerical identifiers and do not match any specific type of PII from the provided list.",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -4370,7 +4370,7 @@
           "9",
           "10"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"facility_id\" and the sample values provided ('1', '2', '3', '4', '5') suggest that this column contains generic identifiers for facilities. These are likely internal identifiers used to uniquely identify facilities within a system. They do not match any specific PII category such as",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
@@ -4874,7 +4874,7 @@
           "109",
           "110"
         ],
-        "pii": "None",
+        "pii": "GENERIC_ID",
         "pii_explanation": "None\n\nThe column name \"region_id\" and the sample values provided ('101', '102', '103', '104', '105') suggest that this is an identifier for different regions. These values appear to be generic identifiers or codes used to represent regions and do not match any specific type of Personally Identifiable Information",
         "pii_sensitivity_level": "NON_SENSITIVE",
         "pii_sensitivity_level_explanation": "NON_SENSITIVE",
